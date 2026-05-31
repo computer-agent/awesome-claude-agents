@@ -2,31 +2,52 @@ spec_version: "0.1.0"
 name: awesome-claude-agents
 version: 1.0.0
 description: >
-  An orchestrated AI development team of 24 specialized sub-agents built for Claude Code.
-  A tech-lead orchestrator analyzes tasks, auto-detects the project stack, and routes
-  work to the right specialist — framework experts (Laravel, Django, Rails, React, Vue),
-  universal backend/frontend/API architects, and core quality agents (code reviewer,
-  performance optimizer, documentation specialist). Each agent returns structured
-  findings so the main agent can coordinate multi-step features end-to-end.
+  An orchestrated team of 24+ specialised Claude Code sub-agents that work
+  together to build complete features for any technology stack. A tech-lead
+  orchestrator routes every task to the right specialist — framework experts
+  for Django, Rails, Laravel, React, and Vue; core agents for code review,
+  performance optimisation, and documentation; plus universal fallbacks for
+  any stack. Drop the collection into ~/.claude/agents/ and invoke
+  @agent-tech-lead-orchestrator to get started.
+author: vijaythecoder
 license: MIT
+
 model:
   preferred: anthropic:claude-sonnet-4-6
+  constraints:
+    temperature: 0.3
+
 skills:
-  - name: tech-lead-orchestration
-    description: Analyzes complex requests, detects the project stack, and produces a strict agent-routing map for multi-step tasks.
-  - name: framework-specialists
-    description: Domain-expert agents for Laravel, Django, Rails, React, and Vue — each with deep, current framework knowledge.
-  - name: code-review
-    description: Security-aware code review with severity-tagged reports.
-  - name: performance-optimization
-    description: Identifies bottlenecks and applies optimizations for scalable, production-ready systems.
-  - name: documentation
-    description: Generates READMEs, API specs, and inline technical documentation.
-  - name: codebase-archaeology
-    description: Explores and documents unfamiliar or legacy codebases to surface context for other agents.
+  - tech-lead-orchestrator
+  - project-analyst
+  - team-configurator
+  - code-reviewer
+  - code-archaeologist
+  - performance-optimizer
+  - documentation-specialist
+  - django-backend-expert
+  - django-api-developer
+  - django-orm-expert
+  - rails-backend-expert
+  - rails-api-developer
+  - react-component-architect
+  - vue-component-architect
+  - laravel-backend-expert
+  - laravel-eloquent-expert
+  - backend-developer
+  - frontend-developer
+  - api-architect
+  - tailwind-css-expert
+
 runtime:
   max_turns: 100
+
 compliance:
   risk_tier: standard
   supervision:
     human_in_the_loop: destructive
+    kill_switch: true
+  recordkeeping:
+    audit_logging: false
+  data_governance:
+    pii_handling: none
